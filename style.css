@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #ff4e50);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Intro Screen */
+#intro {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+#intro h1 { font-size: 2rem; margin-bottom: 20px; }
+.tap-text { font-size: 1.5rem; opacity: 0.9; }
+
+/* Content hidden initially */
+#content { display: none; }
+
+section {
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-behavior: smooth;
+}
+
+.media-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img, video {
+  width: 90%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 20px;
+  display: block;
+  margin-bottom: 10px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1.5s ease;
+  box-shadow: 0 0 25px 10px rgba(255,0,0,0.5); /* red glow on video */
+}
+
+img.visible, video.visible { opacity: 1; transform: translateY(0); }
+
+.caption { font-size: 1rem; opacity: 0.8; margin-bottom: 30px; }
+
+.poem p { max-width: 300px; line-height: 1.6; }
