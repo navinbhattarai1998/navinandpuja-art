@@ -54,18 +54,36 @@ section {
 img, video {
   width: 90%;
   max-width: 400px;
-  height: auto;
+  height: 300px; /* fixed height for all media to match frame */
   border-radius: 20px;
   display: block;
   margin-bottom: 10px;
   opacity: 0;
   transform: translateY(40px);
   transition: all 1.5s ease;
-  box-shadow: 0 0 25px 10px rgba(255,0,0,0.5); /* red glow on video */
+  object-fit: cover; /* ensures video fully fills the frame */
 }
 
 img.visible, video.visible { opacity: 1; transform: translateY(0); }
 
 .caption { font-size: 1rem; opacity: 0.8; margin-bottom: 30px; }
 
-.poem p { max-width: 300px; line-height: 1.6; }
+/* Red glow behind video */
+.video-wrapper {
+  width: 90%;
+  max-width: 400px;
+  height: 300px; /* same height as video */
+  border-radius: 20px;
+  box-shadow: 0 0 25px 10px rgba(255,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover; /* fills frame perfectly */
+}
+
