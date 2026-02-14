@@ -35,9 +35,10 @@ body {
 /* Content hidden initially */
 #content { display: none; }
 
+/* Each section */
 section {
-  min-height: 100vh;
-  padding: 40px 20px;
+  min-height: auto; /* let height adjust naturally */
+  padding: 20px 20px; /* less vertical padding */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,15 +50,16 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 20px; /* small gap between sections */
 }
 
 img, video {
-  width: 90%;          /* responsive width */
-  max-width: 800px;    /* allow larger images on bigger screens */
-  height: auto;        /* maintain full size, no cropping */
+  width: 90%;
+  max-width: 800px;
+  height: auto;
   border-radius: 20px;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 5px; /* less space below media */
   opacity: 0;
   transform: translateY(40px);
   transition: all 1.5s ease;
@@ -65,7 +67,7 @@ img, video {
 
 img.visible, video.visible { opacity: 1; transform: translateY(0); }
 
-.caption { font-size: 1rem; opacity: 0.8; margin-bottom: 30px; }
+.caption { font-size: 1rem; opacity: 0.8; margin-bottom: 15px; }
 
 /* Video red glow frame */
 .video-wrapper {
@@ -80,6 +82,6 @@ img.visible, video.visible { opacity: 1; transform: translateY(0); }
 
 .video-wrapper video {
   width: 100%;
-  height: auto;       /* maintain full video size */
+  height: auto;
   border-radius: 20px;
 }
